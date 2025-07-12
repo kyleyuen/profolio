@@ -4,16 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
   <title>Kyle Yuen - Portfolio</title>
 </head>
 <body>
 
   <!-- Hero / Introduction Section -->
+ <div id="circle">
+  <div class="decorative-circle deco1"></div>
+  <div class="decorative-circle deco2"></div>
+  <div class="decorative-circle deco3"></div>
+
   <header id="hero">
-    <h1>Kyle Yuen</h1>
-    <p>Web-development|C++|Python</p>
-    <a href="#contact">Contact Me</a>
+    <h1 id="name">KYLE YUEN</h1>
+    <p id="info">Web-development | C++ | Python</p>
+    <div id="contactme">
+      <a href="#contact" class="button">Contact Me</a>
+    </div>
   </header>
+</div>
+
 
   <!-- About Me Section -->
   <section id="about">
@@ -27,14 +37,14 @@
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>C++</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>React JS</li>
-      <li>Python</li>
-
+      <li data-level="90">C++</li>
+      <li data-level="85">HTML</li>
+      <li data-level="80">CSS</li>
+      <li data-level="75">React JS</li>
+      <li data-level="70">Python</li>
     </ul>
   </section>
+  
 
   <!-- Projects Section -->
   <section id="projects">
@@ -63,6 +73,7 @@
     <p><a href="https://www.linkedin.com/in/kyle-yuen-0a982335a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
     <p><a href="https://github.com/kyleyuen" target="_blank" rel="noopener noreferrer">Github</a></p>
   </section>
+
 
 
 </body>
