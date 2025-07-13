@@ -1,0 +1,532 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #03045E, #023E8A, #0077B6, #00B4D8, #48CAE4, #90E0EF);
+    background-size: 600% 600%;
+    animation: gradientMove 20s ease infinite;
+    color: #CAF0F8;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2em 1em 4em;
+    box-sizing: border-box;
+  }
+  
+
+  #circle {
+    position: relative;
+    margin-top:15em;
+    width: 70vw;
+    max-width: 75em;
+    height: 25em;
+    background-color: rgba(2, 62, 138, 0.85);
+    border-radius: 50px;
+    box-shadow: 0 12px 48px rgba(2, 62, 138, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 2em 4em 2em 2em;
+    color: #CAF0F8;
+    overflow: visible;
+    z-index: 1;
+
+    animation-name: rotateAnimation;
+    animation-duration: 1ms; 
+    animation-direction: alternate;
+    animation-timeline: scroll(block nearest);
+  }
+  @keyframes rotateAnimation {
+    0%{
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    25%{
+        opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(5);
+      opacity: 0;
+    }
+  }
+  
+  
+  .decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: float 1s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+  
+  .deco1 {
+    width: 220px;
+    height: 220px;
+    background: #48CAE4;
+    top: -110px;
+    left: -110px;
+    animation-delay: 0s;
+  }
+  
+  .deco2 {
+    width: 140px;
+    height: 140px;
+    background: #00B4D8;
+    bottom: -70px;
+    right: -70px;
+    animation-delay: 1s;
+  }
+  
+  .deco3 {
+    width: 180px;
+    height: 180px;
+    background: #90E0EF;
+    top: 30%;
+    left: 10%;
+    animation-delay: 2s;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(0) scale(1.25); }
+  }
+  
+  #hero {
+    width: 100%;
+    text-align: right;
+    position: relative;
+    z-index: 2;
+  }
+  
+  #name {
+    font-size: 8vw;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s forwards;
+  }
+  
+  #info {
+    font-size: 2.5vw;
+    margin-top: -0.5em;
+    color: #90E0EF;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
+  }
+  
+  /* Fade in animation for text */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Contact Me button container */
+  #contactme {
+  margin-top: 2em;
+  align-self: flex-end;
+  background-color: #00B4D8;
+  border-radius: 50px;
+  width: 8em;
+  height: 3.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0, 180, 216, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  left: 87.5%;
+
+  /* Animation for glowing pulse */
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+#contactme:hover {
+  background-color: #48CAE4;
+  box-shadow: 0 8px 32px rgba(72, 202, 228, 0.7);
+  transform: scale(1.1); /* slight pop */
+  animation-play-state: paused; /* pause pulse on hover */
+}
+
+#contactme a {
+  text-decoration: none;
+  color: #CAF0F8;
+  font-weight: 700;
+  font-size: 1.3em;
+  width: 100%;
+  text-align: center;
+}
+
+/* Pulse glow keyframes */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 24px rgba(0, 180, 216, 0.15);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(0, 180, 216, 0.5);
+  }
+}
+
+#scroll{
+  animation: appear 3s ease-in-out;
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest);
+  animation-delay: 0.3s;
+  opacity: 0.75;
+  position: relative;
+  top: 20%;
+  font-size: 1em;
+}
+
+
+@keyframes appear{
+  0%{
+    opacity: 0.75;
+  }
+  5%{
+    opacity: 0;
+  }
+  100%{
+    opacity:0;
+  }
+}
+
+
+
+#about {
+  opacity:0;
+  position: relative;
+  max-width: 50%;
+  margin: 4em auto;
+  padding: 3em 2.5em;
+  background: rgba(2, 62, 138, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+  color: #CAF0F8;
+  overflow: visible;
+  animation: popup 1.5s ease forwards;
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#about::before {
+  content: "K";
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 12rem;
+  font-weight: 900;
+  color: rgba(202, 240, 248, 0.1);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: fadeInLetter 2s ease forwards 0.5s;
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest);
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.about-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(45px);
+  animation: fadeSlideUp ease-in-out;
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest);
+}
+
+
+.highlight {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #00B4D8;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  animation-direction: alternate;
+  animation-timeline: scroll(block nearest);
+}
+
+.highlight:hover {
+  color: #48CAE4;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.glow-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.glow-dots span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #00B4D8;
+  border-radius: 50%;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 6px #00B4D8);
+  animation: drift 10s linear infinite;
+}
+
+.glow-dots span:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.glow-dots span:nth-child(2) {
+  top: 50%;
+  left: 40%;
+  animation-delay: 3s;
+}
+
+.glow-dots span:nth-child(3) {
+  top: 70%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+.glow-dots span:nth-child(4) {
+  top: 30%;
+  left: 80%;
+  animation-delay: 9s;
+}
+
+/* Animations */
+@keyframes popup {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%{
+    opacity:0;
+  }
+  100%{
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInLetter {
+  65%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity:0;
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+#projects, #contact{
+    top: 20%;
+    animation-name: poplast;
+    animation-duration: 1ms; 
+    animation-direction: alternate;
+    animation-timeline: scroll(block nearest);
+  }
+  @keyframes poplast{
+    0%{
+      opacity: 0;
+    }
+    65%{
+        opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #projects{
+    max-width: 60%;
+    margin: 4em auto;
+    padding: 2em 2.5em;
+    background: rgba(2, 62, 138, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 180, 216, 0.3);
+    color: #CAF0F8;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #projects h2 {
+    font-size: 2.8em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    color: #CAF0F8;
+  }
+  
+  .project {
+    background-color: rgba(0, 180, 216, 0.15);
+    border-radius: 15px;
+    padding: 1.5em 2em;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 16px rgba(0, 180, 216, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 180, 216, 0.5);
+  }
+  
+  .project h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.8em;
+    color: #90E0EF;
+  }
+  
+  .project p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    color: #CAF0F8;
+  }
+  
+  .project a {
+    color: #00B4D8;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .project a:hover,
+  .project a:focus {
+    color: #48CAE4;
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #projects {
+      max-width: 90%;
+      padding: 1.5em 1.5em;
+    }
+  
+    .project {
+      padding: 1em 1.5em;
+    }
+  
+    #projects h2 {
+      font-size: 2em;
+    }
+  
+    .project h3 {
+      font-size: 1.4em;
+    }
+  
+    .project p {
+      font-size: 1em;
+    }
+  }
+
+  
+  
+  
+
+
+  
+  @media (max-width: 768px) {
+    #circle {
+      width: 90vw;
+      height: 22em;
+      padding: 1.5em 2em;
+    }
+    #name {
+      font-size: 12vw;
+    }
+    #info {
+      font-size: 4vw;
+    }
+    #contactme {
+      width: 10em;
+      height: 3.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    section {
+      font-size: 1em;
+    }
+  }
+  
