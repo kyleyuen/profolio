@@ -31,7 +31,6 @@ This portfolio highlights my expertise as a web developer with strong foundation
 
 - **HTML5**  
 - **CSS3** (Flexbox, animations, scroll-timeline, media queries)  
-- **No JavaScript** — all interactivity and animations are CSS-based.
 
 ## Project Structure
 ```
@@ -39,7 +38,6 @@ This portfolio highlights my expertise as a web developer with strong foundation
 │
 ├── index.html # Main HTML file
 ├── style.css # CSS stylesheet with all styles and animations
-└── assets/ # (Optional) Images, icons, and other assets
 ```
 
 ## Installation
